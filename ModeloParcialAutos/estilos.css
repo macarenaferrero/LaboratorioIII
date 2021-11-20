@@ -1,0 +1,24 @@
+th, td{
+
+    border: 2px solid black;
+}
+table{
+    border-collapse: separate;
+    border: 2px solid black;
+}
+
+.footer {
+background:black;
+}
+
+.header {
+height: 40vh;
+}
+
+.oculto{
+    display: none;
+}
+
+#spinner-container{
+    align-content : center;
+}

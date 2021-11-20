@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array</title>
+</head>
+
+<body>
+    <a href="https://infobae.com">Ir a google</a>;
+
+    <script>
+        //La froma mas comun de armar un array
+        const vec = [];
+
+        //Otra forma de declararlo
+        //const vec2 = new Array();
+        const vec3 = [32, 20, 45, 10];
+        const vec4 = [...vec]; //spread operator -> operador de propagacion
+
+        console.log(vec);
+        console.log(vec3);
+        console.log(vec4);
+
+        vec.push(30);
+
+        console.log("vec", vec);
+
+
+        const $link = document.querySelector("a");
+        console.log($link.href);
+        console.log($link.getAttribute("href"));
+        $link.setAttribute("href", "https://infobae.com");
+        $link.setAttribute("target", "_blank");
+        $imagen = document.createElement("img");
+        $imagen.setAttribute("src", "https://placeimg.com/300/300/people");
+        $imagen.setAttribute("alt", "imagen de una persona");
+
+        $divImagen = document.getElementById("contenedor-imagen");
+        //$divImagen.appendChild($imagen);
+        $divImagen.innerHTML = "<img src='https://placeimg.com/300/300/people' alt= 'imagen de aquitectura'/>";
+        //declaracion
+        //lenght -> Tamaño del array
+        //concat() -> Concatenar 
+        //push() -> Sube un elemento al final del array
+        //pop -> Retira el ultimo elemento del array y lo devuelve
+        //shift -> Retira el primer elemento del array y lo devuelve
+        //unshift ->  Sube un elemento al principio del array
+
+
+        vec.forEach((elemento) => {
+            console.log(elemento);
+
+        });
+
+        //Devuelve un nuevo array con lo que le devuelve la funcion callback, y tiene el mismo tamano del array original
+        const devolucion = vec.map((elemento) => {
+            return "Hola";
+        });
+    </script>
+</body>
+
+</html>
