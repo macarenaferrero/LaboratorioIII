@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="./index.js" defer></script>
+    <link rel="stylesheet" href="./css/index.css">
+    <title>Ejemplo Ajax</title>
+</head>
+<body>
+    <!-- Hay que hacer addEventListener para el onclick -->
+    <button  onclick="getPersonasAjax();">Traer personas Ajax</button><br><br>
+    <button  onclick="getPersonaAjax(3);">Traer persona 3</button><br><br>
+    <button  onclick="getPersonasFetch();">Traer personas Fetch</button><br><br>
+    <button  onclick="getPersonasFetchAsync();">Traer personas Fetch Async</button><br><br>
+    <button  onclick="getPersonasAxios();">Traer personas Axios</button><br><br>
+    <button  onclick="getPersonasAxiosAsync();">Traer personas Axios Async</button><br><br>
+    <button  onclick="createPersona();">Crear persona Ajax</button><br><br>
+    <button  onclick="creatPersonaFetch();">Crear persona Lorena</button><br><br>
+    <button  onclick="createPersonaAxiosAsync();">Crear persona Loana</button><br><br>
+    <button  onclick="deletePersona(9);">Delete persona Ajax</button><br><br>
+    <button  onclick="deletePersonaFetch(8);">Delete persona Fetch</button><br><br>
+    <button  onclick="deletePersonaAxiosAsync(2);">Delete persona Axios</button><br><br>
+    <button  onclick="updatePersona();">Modificar persona</button><br><br>
+
+
+    <div class="spinner"></div>
+
+</body>
+</html>

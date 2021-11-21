@@ -74,13 +74,13 @@ export const crearPublicidad = (data)=>{
 
         const $ul = document.createElement("ul");
         const $lista = document.createElement("li");
+        $lista.setAttribute("style","list-style-type: none;");
         const $imagenBaño = document.createElement("img");        
         $imagenBaño.setAttribute("src", "./images/baño.png");
         $imagenBaño.setAttribute("width", "25px");
         $imagenBaño.setAttribute("alt", "baños");
         $imagenBaño.classList.add("iconos");
         $lista.appendChild($imagenBaño);
-
         const $baños = document.createElement("span");
         $baños.classList.add("baños");
         $baños.textContent = element.baños;
@@ -89,13 +89,13 @@ export const crearPublicidad = (data)=>{
 
         $ul.appendChild($lista);
         const $listaII = document.createElement("li");
+        $listaII.setAttribute("style","list-style-type: none;");
         const $imgAuto = document.createElement("img");
         $imgAuto.setAttribute("src", "./images/autoIn2.png");
         $imgAuto.setAttribute("width", "25px");        
         $imgAuto.setAttribute("alt", "autos");
         $imgAuto.classList.add("iconos");
         $listaII.appendChild($imgAuto);
-
         const $autos = document.createElement("span");
         $autos.classList.add("autos");
         $autos.textContent = element.autos;
@@ -103,6 +103,7 @@ export const crearPublicidad = (data)=>{
 
         $ul.appendChild($listaII);
         const $listaIII = document.createElement("li");
+        $listaIII.setAttribute("style","list-style-type: none;");
         const $imgDorm = document.createElement("img");
         $imgDorm.setAttribute("src", "./images/dormIn.png");
         $imgDorm.setAttribute("width", "25px");
@@ -111,7 +112,6 @@ export const crearPublicidad = (data)=>{
         $listaIII.appendChild($imgDorm);
         $ul.appendChild($listaIII);
         $article.appendChild($ul);
-
         const $habitaciones = document.createElement("span");
         $habitaciones.classList.add("habitaciones");
         $habitaciones.textContent = element.habitaciones;

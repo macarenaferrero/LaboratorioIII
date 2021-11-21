@@ -1,11 +1,14 @@
 body {
-  border: 1px solid rgba(128, 128, 128, 0.753);
+  border: 1px solid rgb(90, 89, 89);
   padding: 10px;
   background-image: url("/Inmobiliaria/images/fondoIn.jpg");
 }
 
-ul li::marker{
-  display: none !important;
+nav a{
+  color: white;
+  text-decoration: none;
+  margin-right: 5px;
+  
 }
 
 .navegacion{
@@ -18,7 +21,6 @@ ul li::marker{
   padding: 20px;
   background-position: center;
   image-rendering: optimizeSpeed;
-  
   
 }
 
@@ -93,6 +95,8 @@ article{
     display: flex;
     flex-direction: column;
     align-items: center;
+    list-style-type: none;
+    
   }
 
   footer {
