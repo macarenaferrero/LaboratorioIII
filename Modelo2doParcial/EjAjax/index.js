@@ -26,7 +26,7 @@ const getPersonasAjax = () => {
                 console.log(data);
             }
             else {
-                console.error('Error ${xhr.status} : ${xhr.statusText}');
+                console.error(`Error ${xhr.status} : ${xhr.statusText}`);
             }
             clearSpinner();
         }
@@ -38,7 +38,7 @@ const getPersonasAjax = () => {
     xhr.send();
 };
 
-//RECIBE UN ID
+//RECIBE UN ID - SELECCIONA UNA PERSONA
 const getPersonaAjax = (id) => {
 
     const xhr = new XMLHttpRequest();
@@ -50,7 +50,7 @@ const getPersonaAjax = (id) => {
                 console.log(data);
             }
             else {
-                console.error('Error ${xhr.status} : ${xhr.statusText}');
+                console.error(`Error ${xhr.status} : ${xhr.statusText}`);
             }
             clearSpinner();
         }
@@ -67,7 +67,7 @@ const getPersonaAjax = (id) => {
 const getPersonasFetch = () => {
     divSpinner.appendChild(getSpinner());
     fetch(URL)
-        .then(res => res.ok ? res.json() : Promise.reject('Error ${res.status} : ${res.statusText}'))
+        .then(res => res.ok ? res.json() : Promise.reject(`Error ${res.status} : ${res.statusText}`))
         .then(data => console.log(data))
         .catch((err) => {
             console.error(err);
@@ -84,7 +84,7 @@ const getPersonasFetchAsync = async () => {
         divSpinner.appendChild(getSpinner());
         const res = await fetch(URL);
         if(!res.ok){
-            throw new Error('Error ${res.status} : ${res.statusText}');
+            throw new Error(`Error ${res.status} : ${res.statusText}`);
         }
         const data = await res.json();
         console.log(data);
@@ -123,8 +123,6 @@ const getPersonasAxiosAsync = async () => {
     finally{
         clearSpinner();
     }
-
-
 };
 
 //CREAR PERSONA
@@ -137,10 +135,10 @@ const createPersona = ()=>{
         if (xhr.readyState == 4) {
             if (xhr.status >= 200 && xhr.status < 300) {
                 const data = JSON.parse(xhr.responseText);
-                alert(`$(data.id)$(data.nombre)$(data.apellido)`);
+                alert(`Error : ${data.id} ${data.nombre}${data.apellido}`);
             }
             else {
-                console.error('Error ${xhr.status} : ${xhr.statusText}');
+                console.error(`Error ${xhr.status} : ${xhr.statusText}`);
             }
             clearSpinner();
         }
@@ -167,10 +165,10 @@ const creatPersonaFetch = () => {
     };
     divSpinner.appendChild(getSpinner());
     fetch(URL, options)
-        .then(res => res.ok ? res.json() : Promise.reject('Error ${res.status} : ${res.statusText}'))
+        .then(res => res.ok ? res.json() : Promise.reject(`Error ${res.status} : ${res.statusText}`))
         .then(data => console.log(data))
         .catch((err) => {
-            alert('$(data.id)$(data.nombre)$(data.apellido)');
+            alert(`${data.id} ${data.nombre} ${data.apellido}`);
         })
         .finally(() => {
             clearSpinner();
@@ -208,7 +206,7 @@ const deletePersona = (id)=>{
                 alert(xhr.responseText);
             }
             else {
-                console.error('Error ${xhr.status} : ${xhr.statusText}');
+                console.error(`Error ${xhr.status} : ${xhr.statusText}`);
             }
             clearSpinner();
         }
@@ -229,7 +227,7 @@ const deletePersonaFetch = (id) => {
     };
     divSpinner.appendChild(getSpinner());
     fetch(URL + "/" + id, options)
-        .then(res => res.ok ? res.json() : Promise.reject('Error ${res.status} : ${res.statusText}'))
+        .then(res => res.ok ? res.json() : Promise.reject(`Error ${res.status} : ${res.statusText}`))
         .then(data => console.log(data))
         .catch((err) => {
             alert(data);
@@ -267,7 +265,7 @@ const updatePersona = (id)=>{
                 alert(xhr.responseText);
             }
             else {
-                console.error('Error ${xhr.status} : ${xhr.statusText}');
+                console.error(`Error ${xhr.status} : ${xhr.statusText}`);
             }
             clearSpinner();
         }

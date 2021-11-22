@@ -7,6 +7,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/estilos.css">
     <script src="./js/script.js" type="module"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+        crossorigin="anonymous"></script>
     <title>Inmobiliaria</title>
 </head>
 
@@ -15,73 +21,88 @@
         <img src="./images/LogoIn.png" height="150px" alt="logo-inmobiliaria">
         <nav class="itemsNav">
             <ul>
-                <li style="list-style-type: none;"><a href="#">Nosotros</a></li>
-                <li style="list-style-type: none;"><a href="#">Anuncio</a></li>
-                <li style="list-style-type: none;"><a href="#">Blog</a></li>
-                <li style="list-style-type: none;"><a href="#">Contacto</a></li>
+                <li style="list-style-type: none;"><a href="#home">Home</a></li>
+                <li style="list-style-type: none;"><a href="#crearAnuncio">Crear Anuncio</a></li>
+                <li style="list-style-type: none;"><a href="#divTabla">Ver Anuncios</a></li>
+                <li style="list-style-type: none;"><a href="#nosotros">Contacto</a></li>
             </ul>
         </nav>
     </header>
     <main>
         <hr>
-        <div class="inicioPrincipal">
+        <div id="home" class="inicioPrincipal">
             <h1>INMOBILIARIA</h1>
-            <img src="./images/bannerDef.png"  height="430px"  alt="Administración" id="imagenPrincipal">
+            <img src="./images/bannerDef.png" height="430px" alt="Administración" id="imagenPrincipal">
         </div>
         <form action="" class="formulario">
             <fieldset>
-                <legend>Información del Anuncio</legend>
+                <legend id="crearAnuncio">Información del Anuncio</legend>
 
-                <h3>TITULO</h3>
+                <h6>Titulo</h6>
                 <input type="text" class="longTextBox" name="titulo" placeholder="Titulo" id="titulo" autocomplete="off"
                     required>
 
-                <h3>TRANSACCION</h3>
+                <h6>Transacion</h6>
                 <div>
-                    VENTA <input type="radio" name="transaccion" value="venta" id="venta" autocomplete="off" checked>
+                    Venta <input type="radio" name="transaccion" value="venta" id="venta" autocomplete="off" checked>
                 </div>
                 <div>
-                    ALQUILER <input type="radio" name="transaccion" value="alquiler" autocomplete="off" id="alquiler">
+                    Alquiler <input type="radio" name="transaccion" value="alquiler" autocomplete="off" id="alquiler">
                 </div>
-                <h3>DESCRIPCION</h3>
+                <h6>Descripcion</h6>
                 <input type="text" name="descripcion" placeholder="Descripcion" id="descripcion" autocomplete="off"
                     required>
 
-                <h3>PRECIO</h3>
+                <h6>Precio</h6>
                 <input type="number" name="precio" step="0.01" placeholder="Precio" id="precio" autocomplete="off"
                     required>
-                    <h3>CANTIDAD DE BAÑOS</h3>
+                <h6>Cantidad de Baños</h6>
                 <div>
-                    <img src="./images/baño.png" height="100%" width="50px"  alt="baño">
+                    <img src="./images/baño.png" height="100%" width="50px" alt="baño">
                     <input type="number" name="baños" placeholder="Baños" id="baños" autocomplete="off" required>
                 </div>
-                <h3>CANTIDAD DE AUTOS</h3>
+                <h6>Cantidad de autos</h6>
                 <div>
                     <img src="./images/autoIn2.png" height="100%" width="50px" alt="autos">
                     <input type="number" name="autos" placeholder="Autos" id="autos" autocomplete="off" required>
                 </div>
-                <h3>CANTIDAD DE HABITACIONES</h3>
-                <div>
+                <h6>Cantidad de Habitaciones</h6>
+                <div class="margin:0">
                     <img src="./images/dormIn.png" height="100%" width="50px" alt="habitaciones">
-                    <input type="number" name="habitaciones" placeholder="Habitaciones" id="habitaciones" autocomplete="off"
-                        required>
+                    <input type="number" name="habitaciones" placeholder="Habitaciones" id="habitaciones"
+                        autocomplete="off" required>
                 </div>
             </fieldset>
-            <div>
-                <div class="btnGuardar">
-                    <img src="./images/disquete.png" height="100%" width="35px">
-                    <input type="submit" class="submit" value="Guardar">
+               <div class="container col-md-12">
+                    <div class="row align-items-center">
+                        <div class="btnGuardar col-4">
+                            <img src="./images/disquete.png" height="100%" width="35px">
+                            <input type="submit" class="submit" value="Guardar">
+                        </div>
+                        <div class=" col-4">
+                            <input type="button" class="oculto" value="Eliminar" id="btnDelete">
+                        </div>
+                        <div class=" col-4">
+                            <input type="button" class="oculto" value="Cancelar" id="btnCancelar">
+                        </div>
+                        <input type="hidden" name="txtId">
+                    </div>
                 </div>
-                <input type="button" class="oculto" value="Eliminar" id="btnDelete">
-                <input type="button" class="oculto" value="Cancelar" id="btnCancelar">
-                <input type="hidden" name="txtId">
-            </div>
-            <div id="spinner-container"></div>
-            <div id="divTabla"  ></div>
             
+            <div id="spinner-container"></div>            
         </form>
+        <section id="frase" class="frase container-fluid mt-5 mb-5">
+
+            <div class="row">
+                <div class="col-12 p-5">
+                    <h3 class="text-center frase-texto">"Imagina la casa de tus sueños"
+                    </h3>
+                </div>
+            </div>
+        </section>
+        <div id="divTabla"  class="col-12"></div>
     </main>
-    <footer>
+    <footer id="nosotros">
         <nav>
             <a href="#">Nosotros</a>
             <a href="#">Anuncio</a>

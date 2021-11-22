@@ -1,22 +1,24 @@
 
 import { Anuncio_Auto } from "./anuncio.js";
 import { crearTabla } from "./dinamicas.js";
+import { getAnunciosAxiosAsync, createAnuncioAxiosAsync, getAnuncioAjax , updateAnuncio, deleteAnuncioAxiosAsync } from "./controllers.js";
+const $spinnerContainer = document.getElementById("spinner-container");
 
 const $divTabla = document.getElementById("divTabla");
 
-const anuncios = JSON.parse(localStorage.getItem("anuncios")) || [];
-console.log(anuncios);
-actualizarTabla();
+getAnunciosAxiosAsync();
+
 
 window.addEventListener("click", (e) => {
  
     if (e.target.matches("td")) {
         console.log(e.target.parentElement.dataset.id);
         let id = e.target.parentElement.dataset.id;
-        cargarFormulario(anuncios.find((anuncio) => anuncio.id == id));
+        const anuncio = getAnuncioAjax(id);
+        
     }
     else if (e.target.matches("#btnDelete")) {
-        handlerEliminar(parseFloat($formulario.txtId.value));
+        deleteAnuncioAxiosAsync(parseFloat($formulario.txtId.value));
         $formulario.txtId.value = "";
         const $btnEliminar = document.getElementById("btnDelete").classList.add("oculto");
         $formulario.reset();
@@ -29,7 +31,7 @@ window.addEventListener("click", (e) => {
 
 const $formulario = document.forms[0];
 
-function cargarFormulario(anuncio) {
+export function cargarFormulario(anuncio) {
     const { titulo, precio, baños, autos, habitaciones, txtId, descripcion, transaccion } = $formulario;
     txtId.value = anuncio.id;
     titulo.value = anuncio.titulo;
@@ -55,10 +57,10 @@ $formulario.addEventListener("submit", (e) => {
 
     if (anuncioAuxiliar.id === '') {
         anuncioAuxiliar.id = Date.now();
-        handlerCrear(anuncioAuxiliar);
+        createAnuncioAxiosAsync(anuncioAuxiliar);
     }
     else {
-        handlerEditar(anuncioAuxiliar);
+        updateAnuncio(anuncioAuxiliar);
         const $btnEliminar = document.getElementById("btnDelete").classList.add("oculto");
         const $btnCancelar = document.getElementById("btnCancelar").classList.add("oculto");
         $formulario.txtId.value = "";
@@ -68,85 +70,26 @@ $formulario.addEventListener("submit", (e) => {
 })
 
 
-function actualizarTabla() {
+export function actualizarTabla(data) {
     while ($divTabla.hasChildNodes()) {
         $divTabla.removeChild($divTabla.firstChild)
     }
-    const data = JSON.parse(localStorage.getItem("anuncios"));
-
     if (data) {
-        data.sort(function (a, b) { return b.precio - a.precio });
         $divTabla.appendChild(crearTabla(data));
     }
 };
 
 
-const handlerCrear = (nuevoAnuncio) => {
-    alert("Creando anuncio");
-    anuncios.push(nuevoAnuncio);
-    actualizarStorage(anuncios);
-    agregarSpinner();
-    setTimeout(() => {
-        actualizarTabla();
-        eliminarSpinner();
-    }, 3000);
-    actualizarTabla();
-};
-
-const handlerEditar = (editarAnuncio) => {
-    let indice = anuncios.findIndex((anuncio) => {
-        return anuncio.id == editarAnuncio.id;
-    });
-
-    if (confirm("Confirma modificacion?")) {
-
-        anuncios.splice(indice, 1);
-        anuncios.push(editarAnuncio);
-        actualizarStorage(anuncios);
-        agregarSpinner();
-        setTimeout(() => {
-            actualizarTabla();
-            eliminarSpinner();
-        }, 3000);
-        const $submit = document.getElementsByClassName("submit")[0];
-        $submit.value = "Guardar";
-    }
-};
-
-const handlerEliminar = (id) => {
-    let indice = anuncios.findIndex((anuncio) => {
-        return anuncio.id == id;
-    });
-    if (confirm("Confirma eliminacion?")) {
-        anuncios.splice(indice, 1);
-        actualizarStorage(anuncios);
-        agregarSpinner();
-        setTimeout(() => {
-            actualizarTabla();
-            eliminarSpinner();
-        }, 3000);
-    }
-    const $submit = document.getElementsByClassName("submit")[0];
-    $submit.value = "Guardar";
-};
-
-
-const actualizarStorage = (data) => {
-    localStorage.setItem("anuncios", JSON.stringify(data));
-};
-
-function agregarSpinner() {
+export function agregarSpinner() {
     let spinner = document.createElement("img");
     spinner.setAttribute("src", "./images/construccionSpinner.gif");
     spinner.setAttribute("style", "width:200px");
     spinner.setAttribute("alt", "Imagen spinner");
-    document.getElementById("spinner-container").appendChild(spinner);
+    return spinner;
 }
 
 
-function eliminarSpinner() {
-
-    const $spinnerContainer = document.getElementById("spinner-container");
+export function eliminarSpinner() {    
 
     while ($spinnerContainer.hasChildNodes()) {
         $spinnerContainer.removeChild($spinnerContainer.firstElementChild);

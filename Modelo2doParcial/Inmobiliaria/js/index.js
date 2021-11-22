@@ -1,9 +1,18 @@
 import { crearPublicidad } from "./dinamicas.js";
 
 const $divTabla = document.getElementById("divTabla");
-const anuncios = JSON.parse(localStorage.getItem("anuncios")) || [];
-console.log(anuncios);
+const URL = "http://localhost:3000/anuncios";
+const $spinnerContainer = document.getElementById("spinner-container");
 
-if (anuncios.length != 0) {
-    crearPublicidad(anuncios);
-}
+const getAnunciosAxios = () => {
+    axios.get(URL)
+        .then((res) => {
+            const {data} = res; 
+            crearPublicidad(data)
+        })
+        .catch((err) => {
+            console.error(err)
+        });
+};
+getAnunciosAxios();
+

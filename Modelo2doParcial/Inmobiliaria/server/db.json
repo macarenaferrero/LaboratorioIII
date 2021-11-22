@@ -1,99 +1,84 @@
 {
-  "personas": [
-    {
-      "id": 1,
-      "nombre": "Karissa",
-      "apellido": "Barthrop"
-    },
-    {
-      "id": 3,
-      "nombre": "Ossie",
-      "apellido": "Sutter"
-    },
-    {
-      "id": 4,
-      "nombre": "Weylin",
-      "apellido": "Staining"
-    },
+  "anuncios": [
     {
       "id": 5,
-      "nombre": "Lonna",
-      "apellido": "Antonijevic"
+      "titulo": "Challet",
+      "transaccion": "alquiler",
+      "descripcion": "luminoso",
+      "precio": "2657",
+      "baños": "4",
+      "autos": "2",
+      "habitaciones": "4"
     },
     {
       "id": 6,
-      "nombre": "Colette",
-      "apellido": "Hampe"
+      "titulo": "Casilla",
+      "transaccion": "venta",
+      "descripcion": "sin pintar",
+      "precio": "54",
+      "baños": "4",
+      "autos": "5",
+      "habitaciones": "4"
     },
     {
-      "id": 7,
-      "nombre": "Kimbra",
-      "apellido": "Cherm"
+      "id": 11,
+      "titulo": "Pieza",
+      "transaccion": "alquiler",
+      "descripcion": "con expensas",
+      "precio": "9000",
+      "baños": "5",
+      "autos": "4",
+      "habitaciones": "1"
     },
     {
-      "id": 10,
-      "nombre": "Woodrow",
-      "apellido": "Pavlata"
+      "id": 16,
+      "titulo": "Mansion",
+      "transaccion": "alquiler",
+      "descripcion": "a reparar",
+      "precio": "828",
+      "baños": "3",
+      "autos": "1",
+      "habitaciones": "5"
     },
     {
-      "nombre": "Juan",
-      "apellido": "Perez",
-      "id": 11
+      "id": 17,
+      "titulo": "Cabaña",
+      "transaccion": "venta",
+      "descripcion": "con pileta",
+      "precio": "3804",
+      "baños": "4",
+      "autos": "3",
+      "habitaciones": "4"
     },
     {
-      "nombre": "Juana",
-      "apellido": "Perez",
-      "id": 12
+      "id": 18,
+      "titulo": "Duplex",
+      "transaccion": "venta",
+      "descripcion": "se aceptan mascotas",
+      "precio": "153",
+      "baños": "5",
+      "autos": "3",
+      "habitaciones": "4"
     },
     {
-      "nombre": "Juana",
-      "apellido": "Perez",
-      "id": 13
+      "id": 1637529071152,
+      "titulo": "PH",
+      "transaccion": "venta",
+      "descripcion": "Sin papeles",
+      "precio": "50000",
+      "baños": "1",
+      "autos": "1",
+      "habitaciones": "0"
     },
     {
-      "nombre": "Juancito",
-      "apellido": "Perez",
-      "id": 14
-    },
-    {
-      "nombre": "Juancito",
-      "apellido": "Perez",
-      "id": 15
-    },
-    {
-      "nombre": "Juancito",
-      "apellido": "Perez",
-      "id": 16
-    },
-    {
-      "nombre": "Juancito",
-      "apellido": "Perez",
-      "id": 17
-    },
-    {
-      "nombre": "Juancito",
-      "apellido": "Perez",
-      "id": 18
-    },
-    {
-      "nombre": "Juancito",
-      "apellido": "Perez",
-      "id": 19
-    },
-    {
-      "nombre": "Lorena",
-      "apellido": "Gonzalez",
-      "id": 20
-    },
-    {
-      "id": 21,
-      "nombre": "Loana",
-      "apellido": "Ferraro"
-    },
-    {
-      "nombre": "Lorena",
-      "apellido": "Gonzalez",
-      "id": 22
+      "id": 1637546016158,
+      "titulo": "Departamento",
+      "transaccion": "alquiler",
+      "descripcion": "Pasillo interno",
+      "precio": "19.500",
+      "baños": "1",
+      "autos": "2",
+      "habitaciones": "0"
     }
   ]
 }
