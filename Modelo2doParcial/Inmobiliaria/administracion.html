@@ -6,13 +6,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/estilos.css">
-    <script src="./js/script.js" type="module"></script>
-    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
         crossorigin="anonymous"></script>
+    <script src="./js/script.js" type="module" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <title>Inmobiliaria</title>
 </head>
 
@@ -21,10 +22,10 @@
         <img src="./images/LogoIn.png" height="150px" alt="logo-inmobiliaria">
         <nav class="itemsNav">
             <ul>
-                <li style="list-style-type: none;"><a href="#home">Home</a></li>
-                <li style="list-style-type: none;"><a href="#crearAnuncio">Crear Anuncio</a></li>
-                <li style="list-style-type: none;"><a href="#divTabla">Ver Anuncios</a></li>
-                <li style="list-style-type: none;"><a href="#nosotros">Contacto</a></li>
+                <li style="list-style-type: none;"><a class="iconosNav" href="#home">Home</a></li>
+                <li style="list-style-type: none;"><a class="iconosNav" href="#crearAnuncio">Crear Anuncio</a></li>
+                <li style="list-style-type: none;"><a class="iconosNav" href="#divTabla">Ver Anuncios</a></li>
+                <li style="list-style-type: none;"><a class="iconosNav" href="#nosotros">Contacto</a></li>
             </ul>
         </nav>
     </header>
@@ -39,8 +40,8 @@
                 <legend id="crearAnuncio">Información del Anuncio</legend>
 
                 <h6>Titulo</h6>
-                <input type="text" class="longTextBox" name="titulo" placeholder="Titulo" id="titulo" autocomplete="off"
-                    required>
+                <input class="col-md-11" type="text" class="longTextBox" name="titulo" placeholder="Titulo" id="titulo"
+                    autocomplete="off" required>
 
                 <h6>Transacion</h6>
                 <div>
@@ -50,46 +51,41 @@
                     Alquiler <input type="radio" name="transaccion" value="alquiler" autocomplete="off" id="alquiler">
                 </div>
                 <h6>Descripcion</h6>
-                <input type="text" name="descripcion" placeholder="Descripcion" id="descripcion" autocomplete="off"
-                    required>
+                <input class="col-md-11" type="text" name="descripcion" placeholder="Descripcion" id="descripcion"
+                    autocomplete="off" required>
 
                 <h6>Precio</h6>
-                <input type="number" name="precio" step="0.01" placeholder="Precio" id="precio" autocomplete="off"
-                    required>
+                <input class="col-md-11" type="number" name="precio" step="0.01" placeholder="Precio" id="precio"
+                    autocomplete="off" required>
                 <h6>Cantidad de Baños</h6>
-                <div>
-                    <img src="./images/baño.png" height="100%" width="50px" alt="baño">
-                    <input type="number" name="baños" placeholder="Baños" id="baños" autocomplete="off" required>
+                <div class="col-md-12">
+                    <img class="col-1" src="./images/baño.png" height="100%" width="50px" alt="baño">
+                    <input class="col-10" type="number" name="baños" placeholder="Baños" id="baños" autocomplete="off"
+                        required>
                 </div>
                 <h6>Cantidad de autos</h6>
-                <div>
-                    <img src="./images/autoIn2.png" height="100%" width="50px" alt="autos">
-                    <input type="number" name="autos" placeholder="Autos" id="autos" autocomplete="off" required>
+                <div class="col-md-12">
+                    <img class="col-1" src="./images/autoIn2.png" height="100%" width="50px" alt="autos">
+                    <input class="col-10" type="number" name="autos" placeholder="Autos" id="autos" autocomplete="off"
+                        required>
                 </div>
-                <h6>Cantidad de Habitaciones</h6>
-                <div class="margin:0">
-                    <img src="./images/dormIn.png" height="100%" width="50px" alt="habitaciones">
-                    <input type="number" name="habitaciones" placeholder="Habitaciones" id="habitaciones"
+                <h>Cantidad de Habitaciones</h>
+                <div class="col-md-12">
+                    <img class="col-1" src="./images/dormIn.png" height="100%" width="50px" alt="habitaciones">
+                    <input class="col-10" type="number" name="habitaciones" placeholder="Habitaciones" id="habitaciones"
                         autocomplete="off" required>
                 </div>
             </fieldset>
-               <div class="container col-md-12">
-                    <div class="row align-items-center">
-                        <div class="btnGuardar col-4">
-                            <img src="./images/disquete.png" height="100%" width="35px">
-                            <input type="submit" class="submit" value="Guardar">
-                        </div>
-                        <div class=" col-4">
-                            <input type="button" class="oculto" value="Eliminar" id="btnDelete">
-                        </div>
-                        <div class=" col-4">
-                            <input type="button" class="oculto" value="Cancelar" id="btnCancelar">
-                        </div>
-                        <input type="hidden" name="txtId">
-                    </div>
+            <div class="container">
+                <div class="d-block col-3 mx-auto">
+                    <button type="submit" class="submit" value="Guardar"><i class='bx bxs-save pl-1'>Guardar</i></button>
+                    <button type="button" class="oculto" value="Eliminar" id="btnDelete">Eliminar </button>
+                    <button type="button" class="oculto" value="Cancelar" id="btnCancelar">Cancelar </button>
+                    <input type="hidden" name="txtId">
                 </div>
-            
-            <div id="spinner-container"></div>            
+            </div>
+
+            <div id="spinner-container"></div>
         </form>
         <section id="frase" class="frase container-fluid mt-5 mb-5">
 
@@ -100,7 +96,98 @@
                 </div>
             </div>
         </section>
-        <div id="divTabla"  class="col-12"></div>
+
+
+        <!--      FILTRO           -->
+        <section class="container mt-3 p-5 ">
+            <div class="row justify-content-center ">
+                <div class="col-md-10 rounded-pill">
+                    <h2 class="text-center">FILTROS</h2>
+
+                    <form>
+                        <div class="form-row">
+                            <div class="col pl-3">
+                                <label for="filtrar"> Filtrar por:</label>
+                                <select name="filtrar" id="filtro" class="form-control">
+                                    <option name="filtrar" value="Todos" selected>Todos</option>
+                                    <option name="filtrar" value="alquiler">Alquiler</option>
+                                    <option name="filtrar" value="venta">Venta</option>
+                                </select>
+                            </div>
+                            <div class="col">
+                                <label for="promedio">Promedio</label>
+                                <input type="text" name="promedio" id="promedio" class="form-control" disabled>
+                            </div>
+                        </div>
+                    </form>
+
+                </div>
+            </div>
+        </section>
+
+        <!--  SELECCION Y CHECKS     -->
+        <section class="container">
+            <div class="row justify-content-center ">
+                <div class="col-md-12">
+                    <h2>Seleccione los filtros</h2>
+                    <hr>
+
+                    <form>
+
+                        <div class="container">
+                            <div class="row custom-control custom-checkbox" id="contenedor-checkboxs">
+
+                                <div class="custom-control custom-checkbox custom-control-inline">
+                                    <input type="checkbox" class="cbox" id="cboxtitulo" value="titulo" name="titulo"
+                                        checked>
+                                    <label class="custom-control-label" for="cboxtitulo">Titulo</label>
+                                </div>
+                                <div class="custom-control custom-checkbox custom-control-inline">
+                                    <input type="checkbox" class="cbox" id="cboxtransaccion" value="transaccion"
+                                        name="transaccion" checked>
+                                    <label class="custom-control-label" for="cboxtransaccion">Transaccion</label>
+                                </div>
+                                <div class="custom-control custom-checkbox custom-control-inline">
+                                    <input type="checkbox" class="cbox" id="cboxdescripcion" value="descripcion"
+                                        name="descripcion" checked>
+                                    <label class="custom-control-label" for="cboxdescripcion">Descripcion</label>
+                                </div>
+                                <div class="custom-control custom-checkbox custom-control-inline">
+                                    <input type="checkbox" class="cbox" id="cboxprecio" value="precio" name="precio"
+                                        checked>
+                                    <label class="custom-control-label" for="cboxprecio">Precio</label>
+                                </div>
+                                <div class="custom-control custom-checkbox custom-control-inline">
+                                    <input type="checkbox" class="cbox" id="cboxbaños" value="baños" name="baños"
+                                        checked>
+                                    <label class="custom-control-label" for="cboxbaños">Baños</label>
+                                </div>
+                                <div class="custom-control custom-checkbox custom-control-inline">
+                                    <input type="checkbox" class="cbox" id="cboxautos" value="autos" name="autos"
+                                        checked>
+                                    <label class="custom-control-label" for="cboxautos">Autos</label>
+                                </div>
+                                <div class="custom-control custom-checkbox custom-control-inline">
+                                    <input type="checkbox" class="cbox" id="cboxhabitaciones" value="habitaciones"
+                                        name="habitaciones" checked>
+                                    <label class="custom-control-label" for="cboxhabitaciones">Habitaciones</label>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <br>
+        </section>
+
+
+        <!--     TABLA       -->
+        <div class="container mt-5">
+            <div class=" row justify-content-center">
+                <div id="divTabla" class="col-md-10 rounded-pill"></div>
+            </div>
+        </div>
+        <br>
     </main>
     <footer id="nosotros">
         <nav>

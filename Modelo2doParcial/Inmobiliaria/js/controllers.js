@@ -1,4 +1,5 @@
-import { crearPublicidad } from "./dinamicas.js";
+//import { crearPublicidad } from "./dinamicas.js";
+import { Anuncio_Ext } from "./anuncio.js";
 import { agregarSpinner, eliminarSpinner, actualizarTabla, cargarFormulario } from "./script.js";
 
 const URL = "http://localhost:3000/anuncios";
@@ -16,6 +17,20 @@ export const getAnunciosAxiosAsync = async () => {
     }
     finally{
         eliminarSpinner();
+    }
+};
+
+export const traerListado = async (callback) => {
+    
+    try {
+        const {data} = await axios.get(URL);
+        actualizarTabla(data);        
+        console.log(data);
+        callback(data);
+    } catch (err) {
+        console.error(err);
+    }
+    finally{
     }
 };
 

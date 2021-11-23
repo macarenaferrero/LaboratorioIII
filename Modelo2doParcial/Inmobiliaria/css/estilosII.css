@@ -116,9 +116,6 @@ a:hover {
     flex-direction: column;
     height: 160px;
   }
-  #principal{
-    flex-direction: column;
-  }
 
   .itemsNav {
     display: flex;
@@ -131,8 +128,18 @@ a:hover {
     flex-direction: column;
   }
 
+
+
   .fieldsetItems {
     display: flex;
     flex-direction: column;
   }
+}
+@media screen and (max-width: 1350px) {
+
+  #principal{
+    flex-direction: column;
+  }
+
+
 }

@@ -10,7 +10,7 @@ class Anuncio {
 }
 
 
-export class Anuncio_Auto extends Anuncio {
+export class Anuncio_Ext extends Anuncio {
 
     constructor(id, titulo, transaccion, descripcion, precio, baños, autos, habitaciones) {
         super(id, titulo, transaccion, descripcion, precio);

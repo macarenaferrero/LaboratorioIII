@@ -9,6 +9,9 @@ body {
   padding: 2px 0px 2px;
   font-size: 20px;
 }
+.iconosNav{
+  margin-bottom: 3px;
+}
 
 .formulario {
   margin: 0 auto;
@@ -16,13 +19,14 @@ body {
   flex-direction: column;
   justify-content: space-evenly;
   align-items: center;
-  font-family: cursive;
+  font-family: monospace;
 }
 
 row{
   --bs-gutter-y: 0rem;
   --bs-gutter-x: 0.5rem;
   margin: 0;
+  padding-left: 0px;
 }
 
 fieldset {
@@ -76,21 +80,15 @@ input {
   margin: 0;
 }
 
-.btnGuardar {
-  position: relative;
-  width: auto;
-  align-items: center;
-}
-.btnGuardar img {
-  position: absolute;
-  top: 2px;
-}
 
-.btnGuardar input {
-  display: block;
-  width: 40%;
-  box-sizing: border-box;
-}
+/*
+  comento con crtl+k+c
+  descomento con crtl+k+u
+ */
+
+ .submit{
+   display: inline-block;
+ }
 
 .submit,
 #btnDelete,
@@ -102,12 +100,10 @@ input {
   vertical-align: top;
 }
 
-.submit {
-  background-position: left;
-  background-size: 15px;
-  background-repeat: no-repeat;
-  width: 80px;
-  text-align: right;
+
+#contenedor-checkboxs{
+  text-align: start;
+  vertical-align: top;
 }
 
 table {
@@ -133,9 +129,14 @@ thead {
 .oculto {
   display: none;
 }
+
 #imagenPrincipal {
   width: -webkit-fill-available;
   align-items: center;
+}
+
+.cbox{
+  padding-right: 200px;
 }
 
 .frase {
@@ -143,10 +144,14 @@ thead {
   height: auto;
 }
 
+.col-4{
+  padding-left:132px;
+}
 .frase-texto {
   color: white;
   font-size: 40px;
   justify-content: center;
+  font-family: monospace;
 }
 
 /* NO VISITADO*/
@@ -177,12 +182,14 @@ a:hover {
   transition-duration: 400ms;
 }
 
-@media screen and (max-width: 500px) {
-  .navegacion {
-    flex-direction: column;
-    height: 160px;
-  }
+.divTabla{
+  justify-content: center;
+  padding-right: 0px;
+  margin-right: 0px;
+}
 
+@media screen and (max-width: 500px) {
+  
   .itemsNav {
     display: flex;
     flex-direction: column;
